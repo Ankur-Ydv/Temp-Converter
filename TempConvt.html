@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Temperature Converter</title>
+        <style>
+            body{
+                padding: 100px 100px;
+                image-orientation: 0deg;
+            }
+            h1{
+                text-align: center;
+                border-style: solid;
+                border-width: 2px;
+                border-radius: 10px;
+                background-color: rgb(226, 144, 50);
+                padding: 5px;
+            }
+            #container{
+                text-align: center;
+                border-style: solid;
+                background-color: rgb(3, 180, 106);
+                border-radius: 10px;
+                padding: 20px;
+            }
+            .input-div{
+                display: inline-block;
+            }
+            .ip{
+                padding: 10px;
+                margin: 20px;
+                font-size: 20px;
+                text-align: center;
+                width: 150px;
+                border-style: solid;
+                border-radius: 10px;
+            }
+            label{
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body background="image.jpg">
+        <h1>Temperature Converter</h1>
+        <div id="container">
+            <div class="input-div">
+                <label>Celsius</label><br>
+                <input type="number" class="ip" value="0" id="c">
+            </div>
+            <div class="input-div">
+                <label>Fahrenheit</label><br>
+                <input type="number" class="ip" value="32" id="f">
+            </div>
+        </div>
+        <script>
+            let cel = document.getElementById("c");
+            let fah = document.getElementById("f");
+
+            cel.addEventListener('input',function(){
+                let c = this.value;
+                let f = (c * 9/5) + 32;
+                fah.value = f.toFixed(3);
+            });
+
+            fah.addEventListener('input',function(){
+                let f = this.value;
+                let c = (f - 32) + 5/9;
+                cel.value = c.toFixed(3);
+            });
+
+        </script>
+    </body>
+</html>
